@@ -5,17 +5,18 @@
 
 
 ## 'makeCacheMatrix' function creates a list containing 4 functions: 
-## 1.     $set(matrix): sets a matrix to be used
+## 1.     $set(newmatrix): sets a matrix to be used. This function allows to 
+##      easily assign a new matrix to a previously created list for calculation.
 ## 2.     $get() gets the original matrix
 ## 3.     $setSolve(inverse) sets the inverse matrix in the cache
 ## 4.     $getSolve () gets the inverse matrix from the cache
 ## 
-## 'x' must be a square matrix
+## 'x' must be a square and invertible matrix
 
 makeCacheMatrix <- function(x = matrix()) {
         solvematrix <- NULL
-        set <- function(matrix) {
-                x <<- matrix
+        set <- function(newmatrix) {
+                x <<- newmatrix
                 solvematrix <<- NULL
         }
         get <- function() x
