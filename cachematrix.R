@@ -1,5 +1,5 @@
-## These funcions calculate the inverse matrix resulting from
-## applying solve() function to an square matrix and store both of the in a list.
+## These functions calculate the inverse matrix resulting from
+## applying solve() function to an square matrix and store both of them in a list.
 ## Then if that inverse matrix is needed it can be 
 ## get from de cache without needing to perform calculations again.
 
