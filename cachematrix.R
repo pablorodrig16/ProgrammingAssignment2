@@ -31,20 +31,20 @@ makeCacheMatrix <- function(x = matrix()) {
 ## 'cacheSolve' returns the inverse matrix from the original one. When it is called 
 ## for the first time it return the result from applying solve() function to the 
 ## original matrix and set this result on the cache. Therefore when cacheSolve()
-## is called it gets the inverse matrix from the cache.
+## is called with the same data it gets the inverse matrix from the cache.
 ## 'x' argument must be a list created with 'makeCacheMatrix' function containing
 ## the original matrix.
 
 cacheSolve <- function(x, ...) {
-
+        
         inverse <- x$getSolve()
         if(!is.null(inverse)) {
                 message("getting cached matrix")
-                return(inverse)
+                inverse
         }else{
-        matrix <- x$get()
-        inverse <- solve(matrix, ...)
-        x$setSolve(inverse)
-        inverse
+                matrix <- x$get()
+                inverse <- solve(matrix, ...)
+                x$setSolve(inverse)
+                inverse
         }
 }
